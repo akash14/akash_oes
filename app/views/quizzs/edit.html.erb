@@ -1,0 +1,58 @@
+<html>
+<head>
+   <title>Online Examination</title>
+    <%= stylesheet_link_tag 'home' %>
+  </head>
+  <body>
+  	 <%= form_for @quizz, :as => :quizz, :url => edit_path, :method => :put do |f| %>
+	<div class="container">
+      <fieldset>
+<h1>Update the Question</h1>
+<div class="form-row">
+    <label><%= f.label 'Q Id:' %></label>
+    <%= f.text_field :id, :readonly => true %>
+    <%= show_field_error(@quizz, :question) %>
+  </div>
+<div class="form-row">
+    <label><%= f.label 'Question:' %></label>
+    <%= f.text_area :question %>
+    <%= show_field_error(@quizz, :question) %>
+  </div>
+
+  <div class="form-row">
+    <label><%= f.label 'Option 1:' %></label>
+     <%= f.text_field :ans1%>
+   <%= show_field_error(@quizz, :ans1) %>
+  </div>
+
+  <div class="form-row">
+    <label><%= f.label 'Option 2:' %></label>
+     <%= f.text_field :ans2 %>
+   <%= show_field_error(@quizz, :ans2) %>
+  </div>
+
+  <div class="form-row">
+    <label><%= f.label 'Option 3:' %></label>
+  <%= f.text_field :ans3 %>
+    <%= show_field_error(@quizz, :ans3) %>
+  </div>
+
+   <div class="form-row">
+    <label><%= f.label 'Option 4:' %></label>
+  <%= f.text_field :ans4 %>
+    <%= show_field_error(@quizz, :ans4) %>
+  </div>
+
+   <div class="form-row">
+    <label><%= f.label 'Correct Answer:' %></label>
+  <%= f.text_field :correctAns %>
+    <%= show_field_error(@quizz, :correctAns) %>
+  </div>
+ <%= f.submit 'Update' %>
+<%= link_to 'Show', @quizz %> |
+<%= link_to 'Back', quizzs_path %>
+</fieldset>
+</div>
+<%end%>
+</body>
+</html>

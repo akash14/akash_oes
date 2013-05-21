@@ -1,0 +1,32 @@
+<html>
+  <head>
+   <title>Online Examination</title>
+    <%= stylesheet_link_tag 'home' %>
+  </head>
+
+<body>
+  <div class="container">
+  <%= form_for @quizz, :as => :quizz, :url => percentage_path(@quizz), :method => :put do |f| %>
+  <h2>Which question do you want to answer?</h2>
+  <fieldset>
+
+     <h1>Questions</h1>
+    <% @quizzs.each do |quizz| %>
+    <div class="form-row">
+      <label>Q.no. <%=h quizz.id%></label>
+      <b><%=h quizz.question %></b>
+      <%= link_to'Answer this', {:controller => "quizzs", :action => "answer", :id=>quizz.id}%>
+     </div>
+    <%end%>
+</div>
+
+  <div class="container">
+    <%= f.submit 'Submit All' %>
+ </div>
+
+ </fieldset>
+<%end%>
+</body>
+</html>
+
+

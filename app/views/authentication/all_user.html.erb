@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Online Examination</title>
+<%= stylesheet_link_tag 'home' %>
+</head>
+<body>
+	   <div class="container">
+        <fieldset>
+<h1>List of Users Registered & Score</h1>
+<div class="form-row">
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>User Name</th>
+    <th>User Email ID </th>
+    <th>Percentage (%)</th>
+    <th>No. of Exam attmepts</th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.id %></td>
+    <td><%= user.username %></td>
+    <td><%= user.email %></td>
+    <td><%= user.count %></td>
+    <td><%= user.attempts %></td>
+    <td><%= link_to 'Grant Exam attempts', {:controller => "authentication", :action => "exam_permissions", :id=>user.id} %></td>
+  </tr>
+  <% end %>
+</table>
+<br />
+<%= link_to 'Back', quizzs_path %>
+</div>
+</fieldset>
+<p><h3>Note: Grant Exam attempts link will provide the permission for the user to attempt the exam one more time.</h3></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Online Examination</title>
+<%= stylesheet_link_tag 'home' %>
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to Online Examination</h1>
+		<p>&nbsp;</p>
+		<p><img src="images/exam1.jpg" height="300" width="320" /><p>
+		<p>&nbsp;</p>
+		<p>
+		<%= link_to "User Access ", {:controller => "authentication", :action => "sign_in",:id=>"1" } %>
+		</p>
+		<p>
+		<%= link_to "Admin Access", :admin %>
+		</p>
+	</div>
+
+</body>
+</html>
+

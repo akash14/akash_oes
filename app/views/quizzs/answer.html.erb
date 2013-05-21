@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>Online Examination</title>
+<%= stylesheet_link_tag 'home' %>
+</head>
+<body>
+	<div class="container">
+		<fieldset>
+	
+	    <b> <%= h @quizz.id %>.</b>Question:</b>
+			<%=h @quizz.question %>?</p>
+		<p>
+		<b>Option 1:</b>
+		<%=h @quizz.ans1 %>
+		</p>
+		<p>
+		<b>Option 2:</b>
+		<%=h @quizz.ans2 %>
+		</p>
+		<p>
+		<b>Option 3:</b>
+		<%=h @quizz.ans3 %>
+		</p>
+		<p>
+		<b>Option 4:</b>
+		<%=h @quizz.ans4 %>
+		</p>
+		<%= form_tag(:action => "check",:id => @quizz.id) do%>
+		<p>
+		<b>The correct answer: </b>
+		<select name="correctAns" id="params[:correctAns]">
+			<option value="0">select</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		</select>
+		</p>
+		<p><%= submit_tag("Submit")%></P>
+<% end %>
+<%= link_to 'Back', {:controller => "quizzs", :action => "questions",:id=>"1" } %>
+
+</fieldset>
+</div>
+</body>
+  </html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title>Online Examination</title>
+<%= stylesheet_link_tag 'home' %>
+</head>
+<body>
+  <div class="container">
+    
+    <%= form_for @user, :as => :user, :url => sign_in_path(@user) do |f| %>
+<fieldset>
+  <h1>Sign In</h1>
+
+  <div class="form-row">
+    <label><%= f.label 'username or email:' %></label>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="form-row">
+    <label><%= f.label 'password:' %></label>
+    <%= f.password_field :password %>
+  </div>
+
+  <%= f.submit 'Sign In' %>   <%= f.submit 'Clear Form', :type => 'reset' %>
+
+  <p><%= link_to 'New User Form', :new_user %></p>
+
+    
+</fieldset>
+
+<% end %>
+
+  </div>
+
+</body>
+</html>
+
+
+

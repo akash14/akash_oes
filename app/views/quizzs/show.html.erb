@@ -1,0 +1,46 @@
+<head>
+  <title>Online Examination</title>
+<%= stylesheet_link_tag 'home' %>
+</head>
+<body>
+ <div class="container">
+    <fieldset>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Question:</b>
+  <%= @quizz.question %>
+</p>
+
+<p>
+  <b>Option 1:</b>
+  <%= @quizz.ans1 %>
+</p>
+
+<p>
+  <b>Option 2:</b>
+  <%= @quizz.ans2 %>
+</p>
+
+<p>
+  <b>Option 3:</b>
+  <%= @quizz.ans3 %>
+</p>
+
+<p>
+  <b>Option 4:</b>
+  <%= @quizz.ans4 %>
+</p>
+
+<p>
+  <b>Correct Answer:</b>
+  <%= @quizz.correctAns %>
+</p>
+
+
+<%= link_to 'Edit', edit_quizz_path(@quizz) %> |
+<%= link_to 'Back', quizzs_path %>
+</fieldset>
+</div>
+</body>
+</html>

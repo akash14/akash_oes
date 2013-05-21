@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Online Examination</title>
+<%= stylesheet_link_tag 'home' %>
+</head>
+<body>
+	<div class="container">
+	<marquee><h1>Welcome to Online Examination</h1></marquee>
+	<p>&nbsp;</p>	
+	<p><img src="/images/exam2.jpg" height="300" width="320" /><p>
+	<p>&nbsp;</p>
+	<p><%= link_to 'Start Exam', {:controller => "quizzs", :action => "questions",:id=>"1" }%></P>
+
+</div>
+</body>
+</html>

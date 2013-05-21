@@ -1,0 +1,55 @@
+
+<html>
+<head>
+  <title>Online Examination</title>
+<%= stylesheet_link_tag 'home' %>
+</head>
+<body>
+    <%= form_for @user, :as => :user, :url => new_user_path, :method => :post do |f| %>
+     <div class="container">
+      <fieldset>
+      <h1>Sign Up</h1>
+          <div class="form-row">
+    <label><%= f.label 'Username:' %></label>
+    <%= f.text_field :username %>
+    <%= show_field_error(@user, :username) %>
+  </div>
+
+  <div class="form-row">
+    <label><%= f.label 'Email ID:' %></label>
+     <%= f.text_field :email %>
+   <%= show_field_error(@user, :email) %>
+  </div>
+
+  <div class="form-row">
+    <label><%= f.label 'Password:' %></label>
+     <%= f.password_field :password %>
+   <%= show_field_error(@user, :password) %>
+  </div>
+
+  <div class="form-row">
+    <label><%= f.label 'Password Confirmation:' %></label>
+  <%= f.password_field :password_confirmation %>
+    <%= show_field_error(@user, :password_confirmation) %>
+  </div>
+
+  <%= f.submit 'Sign Up' %>
+  <%= f.submit 'Clear Form', :type => 'reset' %>
+
+  <p><%= link_to 'Back', sign_in_path %></p>
+</fieldset>
+</div>
+<% end %>
+</body>
+</html>
+
+  
+  
+
+   
+
+   
+  
+    
+    
+

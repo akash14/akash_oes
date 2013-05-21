@@ -1,0 +1,52 @@
+
+<html>
+<head>
+  <title>Online Examination</title>
+<%= stylesheet_link_tag 'home' %>
+</head>
+<body>
+    <div class="container">
+        <fieldset>
+<h1>Listing Questions</h1>
+<div class="form-row">
+<table>
+  <tr>
+    <th>Question</th>
+    <th>Option 1</th>
+    <th>Option 2</th>
+    <th>Option 3</th>
+    <th>Option 4</th>
+    <th>Correct Answer</th>
+    <th colspan="3"></th>
+  </tr>
+
+<% @quizzs.each do |quizz| %>
+  <tr>
+    <td><%= quizz.question %></td>
+    <td><%= quizz.ans1 %></td>
+    <td><%= quizz.ans2 %></td>
+    <td><%= quizz.ans3 %></td>
+    <td><%= quizz.ans4 %></td>
+    <td><%= quizz.correctAns %></td>
+    <td><%= link_to 'Show', quizz, :method => :get %></td>
+    <td><%= link_to 'Edit', edit_quizz_path(quizz), :method => :put %></td>
+    <td><%= button_to 'Destroy', {:controller => "quizzs", :action =>"destroy", :id => quizz.id }, :confirm => "Are you sure you want to delete question #{quizz.id}?", :method => :delete  %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+<div class="form-row">
+<%= button_to 'New Question', new_quizz_path %><br/>
+<%= link_to 'Back', :root %>
+</div>
+</fieldset>
+<br />
+<div class="form-row">
+<fieldset>
+    <%= button_to ' View the List of Registered User', {:controller => "authentication", :action => "all_user",:id=>"1" } %><br />
+</fieldset>
+</div>
+</div>
+</body>
+</html>
